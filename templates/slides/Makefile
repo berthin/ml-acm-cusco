@@ -1,6 +1,7 @@
 all:
-	pdflatex slides
-	pdflatex slides
+	pdflatex presentation
+	bibtex presentation
+	pdflatex presentation
 
 clean: 
-	rm -f *.aux *.bbl *.log *.blg *.dvi *.toc
+	rm -f *.aux *.bbl *.snm *.out *.nav *.log *.blg *.dvi *.toc
