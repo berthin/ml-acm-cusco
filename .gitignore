@@ -13,6 +13,7 @@
 *.cb2
 *.old
 .*.lb
+*.DS_Store
 
 ## Intermediate documents:
 *.dvi
