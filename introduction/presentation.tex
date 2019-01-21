@@ -13,6 +13,9 @@
 \date{January 28th, 2019}
 
 \begin{document}
+
+\newcommand{\addsource}[1]{\centering\tiny{Source: \url{#1}}}
+
 \thispagestyle{empty}
 \begin{frame}
     \titlepage
@@ -31,12 +34,12 @@
     \end{frame}
 }
 
-\section{Machine Learning Foundations}
+\section{Historia y definici\'on}
 \begin{frame}
     \begin{figure}
         \includegraphics[width=0.8\textwidth]{imgs/machine-learning-timeline.pdf}
     \end{figure}
-    \centering\tiny{Source: \url{https://medium.com/bloombench/history-of-machine-learning-7c9dc67857a5}}
+    \addsource{https://medium.com/bloombench/history-of-machine-learning-7c9dc67857a5}
 \end{frame}
 
 \begin{frame}
@@ -49,10 +52,9 @@
         \includegraphics[width=0.5\textwidth]{imgs/sample-ml.png}
     \end{figure}
     \vspace{-.5cm}
-    \centering\tiny{Source: \url{https://medium.com/@ageitgey/machine-learning-is-fun-80ea3ec3c471}}
+    \addsource{https://medium.com/@ageitgey/machine-learning-is-fun-80ea3ec3c471}
 \end{frame}
 
-%\setbeamercovered{transparent}
 \begin{frame}
 \begin{table}[]
     \caption{Informaci\'on de casas en la Provincia de Cusco}
@@ -64,10 +66,84 @@
         2                & 800       & Santiago      & \$ 150,000 \\ \hline
         1                & 550       & Santiago      & \$ 78,000  \\ \hline
         4                & 2000      & San Sebastián & \$ 150,000 \\ \hline
-        \uncover<2>{\color{red}
+        \uncover<2->{\color{red}
         3                & \color{red} 2000      & \color{red}Cusco         & \color{red}{\$ ???????} } \\ \hline
     \end{tabular}
 \end{table}
+
+    \only<3>{ 
+        \begin{exampleblock}{\small Ejemplo python}
+            House price estimation
+        \end{exampleblock}
+    }
+\end{frame}
+
+
+\begin{frame}
+    \textbf{Tipos de Machine Learning}
+    \begin{enumerate}
+        \item \textbf{Supervised (Supervisado):} Los datos contienen etiquetas.
+        $$X \rightarrow y $$
+        \item \textbf{Unsupervised (No supervisado):} Los datos NO contienen etiquetas.
+        
+        $$ X \rightarrow ?? $$
+        \item \textbf{Otros:} Semi-supervised, reinforcement Learning.
+    \end{enumerate}
+
+    \addsource{https://towardsdatascience.com/types-of-machine-learning-algorithms-you-should-know-953a08248861}
+\end{frame}
+
+
+\begin{frame}
+    \textbf{Problemas solucionados con ML}
+    \begin{enumerate}
+        \item \textbf{Classification (Clasificaci\'on):} Predecir un valor discreto.
+
+        Ejemplo: {maduro, no maduro}, {gato, perro, tigre, casa}, {cancer, no cancer}
+
+    \item \textbf{Regression (Regresión):} Predecir un valor real.
+
+        Ejemplo: Precio de una casa, probabilidad de aprobar un curso.
+
+    \item \textbf{Clustering (Agrupación):} Predecir grupos con características similares.
+
+        Ejemplo: Tipos de uruarios, clientes.
+    \end{enumerate}
+
+    \addsource{https://towardsdatascience.com/types-of-machine-learning-algorithms-you-should-know-953a08248861}
+\end{frame}
+
+\section{Terminolog\'ia y conceptos importantes}
+\begin{frame}
+    \textbf{Términos y conceptos importantes (I)}
+    \begin{enumerate}
+        \item \textbf{Sample (Ejemplo):} Instancia/item de los datos usados.
+        \item \textbf{Feature (Característica):} Atributo asociado a un sample.
+        \item \textbf{Label (Etiqueta):} Valor asociado a un sample.
+            \begin{itemize}
+                \item Categoría para problema de clasificación.
+                \item Valor real para problemas de regresión.
+            \end{itemize}
+        \item \textbf{Feature vector (Vector de caracter\'isticas):} Conjunto de features asociados a un sample.
+    \end{enumerate}
+
+    \addsource{https://cs.nyu.edu/~mohri/mls}
+\end{frame}
+
+\begin{frame}
+    \textbf{Términos y conceptos importantes (II)}
+    \begin{enumerate}
+        \setcounter{enumi}{4}
+        \item \textbf{Outlier (Dato aislado):} Ejemplos raros/errones/anómalos.
+        \item \textbf{Data (Datos):}
+                \begin{itemize}
+                    \item Training (Entrenamiento), comunmente etiquetada.
+                    \item Testing (Prueba), etiquetada pero no vista antes.
+                    \item Validation (Validación), etiquetada para elección de hiperparámetros.
+                \end{itemize}
+    \end{enumerate}
+
+    \addsource{https://cs.nyu.edu/~mohri/mls}
 \end{frame}
 
 \begin{frame}
@@ -85,7 +161,7 @@
     \begin{figure}
         \includegraphics[width=0.8\textwidth]{imgs/cs-skills.png}
     \end{figure}
-    \centering\tiny{Source: \url{https://blog.udacity.com/2016/04/5-skills-you-need-to-become-a-machine-learning-engineer.html}}
+    \addsource{https://blog.udacity.com/2016/04/5-skills-you-need-to-become-a-machine-learning-engineer.html}
 \end{frame}
 
 \begin{frame}
@@ -99,63 +175,12 @@
         \item[\small{6.}] Full Stack Web Developer (salario U.S. 88k\$)
     \end{itemize}
 
-    \tiny{Source: \url{https://blog.coursera.org/top-6-jobs-computer-science-degree/}}
+    \addsource{https://blog.coursera.org/top-6-jobs-computer-science-degree/}
 \end{frame}
 
 
-\begin{frame}
-    \textbf{Términos y definiciones importantes}
-    \begin{itemize}
-        \item[\small{1.}] \textbf{Ejemplo/example:} Instancia/item de los datos usados.
-        \item[\small{2.}] \textbf{Característica/feature:} Atributos asociados a un ejemplo, usualmente representado por vectores.
-        \item[\small{3.}] \textbf{Etiqueta/label:} Categoría (clasificación) o valor real (regresión) asociadas a un ejemplo.
-        \item[\small{4.}] \textbf{Aislado/outlier:} Ejemplos raros/errones/anómalos.
-        \item[\small{5.}] \textbf{Datos/data:}
-                \begin{itemize}
-                    \item Train/Entrenamiento, comunmente etiquetada.
-                    \item Test/Prueba, etiquetada pero no vista antes.
-                    \item Validation/Validación, etiquetada para elección de hiperparámetros.
-                \end{itemize}
-    \end{itemize}
-
-    \tiny{Source: \url{https://cs.nyu.edu/~mohri/mls}}
-\end{frame}
 
 
-\begin{frame}
-    \textbf{Tipos de Machine Learning}
-    \begin{itemize}
-        \item[\small{1.}] \textbf{Supervisado/Supervised:} Los datos contienen etiquetas.
-        
-        X $\rightarrow$ y
-        \item[\small{2.}] \textbf{No Supervisado/Unsupervised:} Los datos NO contienen etiquetas.
-        
-        X $\rightarrow$ ??
-        \item[\small{3.}] \textbf{Otros:} Semi-supervised, reinforcement Learning.
-    \end{itemize}
-
-    \tiny{Source: \url{https://towardsdatascience.com/types-of-machine-learning-algorithms-you-should-know-953a08248861}}
-\end{frame}
-
-
-\begin{frame}
-    \textbf{Tipos de Problemas solucionados por ML}
-    \begin{itemize}
-        \item[\small{1.}] \textbf{Classificación/Classification:} Predecir un valor discreto.
-
-        Ejemplo: {maduro, no maduro}, {gato, perro, tigre, casa}, {cancer, no cancer}
-
-        \item[\small{2.}] \textbf{Regresión/Regression:} Predecir un valor real.
-
-        Ejemplo: Precio de una casa, probabilidad de aprobar un curso.
-
-        \item[\small{3.}] \textbf{Agrupación/Clustering:} Predecir grupos con características similares.
-
-        Ejemplo: Tipos de uruarios, clientes.
-    \end{itemize}
-
-    \tiny{Source: \url{https://towardsdatascience.com/types-of-machine-learning-algorithms-you-should-know-953a08248861}}
-\end{frame}
 
 \begin{frame}
     \textbf{TODO: tools, courses, applications, Toolkits and environment configuration}
@@ -164,7 +189,7 @@
         \item[\small{2.}] \textbf{item}
     \end{itemize}
 
-    \tiny{Source: \url{https://}}
+    \addsource{https://}
 \end{frame}
 
 
