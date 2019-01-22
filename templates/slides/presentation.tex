@@ -1,8 +1,11 @@
 \documentclass[english,svgnames,notes=hide,12pt]{beamer}
 \usepackage{macros-ohp}
 
+\defbeamertemplate*{section in toc}{my theme}
+{\leavevmode\leftskip=0.5em\normal{\usebeamercolor[fg]{titlelike}\inserttocsectionnumber.} \inserttocsection\par}
+
 \def\seminarname{Machine Learning Seminar}
-\def\presentationtitle{Introduction to Machine Learning}
+\def\presentationtitle{Introducci\'on a Machine Learning}
 
 \title{\large\seminarname:\\\large\presentationtitle}
 \author{Author Name\\
@@ -13,22 +16,28 @@
 \date{January 28th, 2019}
 
 \begin{document}
+
+\newcommand{\addsource}[1]{\centering\tiny{Source: \url{#1}}}
+
 \thispagestyle{empty}
-%\begin{frame}[plain] %put [plain] at the end to get rid of the page number on this page
 \begin{frame}
     \titlepage
 \end{frame}
 
 \begin{frame}
-    \frametitle{Outline}
+    \frametitle{\textbf{Tabla de contenidos}}
+    \begin{minipage}[t][4cm][t]{\textwidth}
     \tableofcontents
+    \end{minipage}
 \end{frame}
 
 \AtBeginSection[]
 {
     \begin{frame}<beamer>
-    \frametitle{Outline}
+    \frametitle{\textbf{Tabla de contenidos}}
+    \begin{minipage}[t][4cm][t]{\textwidth}
     \tableofcontents[currentsection]
+    \end{minipage}
     \end{frame}
 }
 
