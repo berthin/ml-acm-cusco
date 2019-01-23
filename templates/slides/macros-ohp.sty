@@ -30,7 +30,7 @@
 \usepackage{xspace}
 \usepackage{relsize}
 \usepackage{ucs}
-\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{inputenc}
 
 \makeatletter
 \usepackage[english]{babel}
@@ -81,13 +81,21 @@
 \newcommand{\argmin}{\arg\!\min}
 \newcommand{\argmax}{\arg\!\max}
 
+\defbeamertemplate{section in toc}{my theme}
+{
+    \leavevmode \leftskip=0.5em
+    \normal{
+        \usebeamercolor[fg]{titlelike}
+        \inserttocsectionnumber.} \inserttocsection\par
+}
+
 \setbeamertemplate{headline}[my header]
 
 \setbeamertemplate{frametitle}{
 \begin{centering}
-	\begin{textblock*}{180mm}(-25mm,15mm)
+    \begin{textblock*}{180mm}(-35mm,15mm)
 		\insertframetitle
-	\end{textblock*}
+    \end{textblock*}
 \end{centering}
 }
 
